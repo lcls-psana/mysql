@@ -25,7 +25,8 @@ standardCondaPackage('openmpi', **locals())
 #
 def make_libmysql_soname_header(env, target, source):
     trgt = open(str(target[0]), "w")
-    print >> trgt, 'const char* const libmysql_soname = "libmysqlclient.so";'
+    trgt.write('const char* const libmysql_soname = "libmysqlclient.so";')
+    trgt.close()
     
 header = "#arch/$SIT_ARCH/geninc/mysql/libmysql_soname.h"
 target = env.Command(header, None, make_libmysql_soname_header)
