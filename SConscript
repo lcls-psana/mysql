@@ -18,7 +18,7 @@ from SConsTools.CondaMeta import condaPackageExists
 from SConsTools.standardCondaPackage import standardCondaPackage
 
 REQUIRED_PKGLIBS='mysqlclient'
-standardCondaPackage('openmpi', **locals())
+standardCondaPackage('mysql', **locals())
 
 #
 # very special target which makes libmysql_soname.h header 
